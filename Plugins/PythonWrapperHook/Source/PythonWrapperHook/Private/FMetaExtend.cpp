@@ -1,5 +1,4 @@
 ﻿#include "FMetaExtend.h"
-
 #include "UObject/MetaData.h"
 
 
@@ -46,7 +45,7 @@ void FMetaExtend::SetPropertyBlueprintVisible()
 	SetPropertyBlueprintVisible(FKBoxElem::StaticStruct(), {TEXT("Center"), TEXT("Rotation"), TEXT("X"), TEXT("Y"), TEXT("Z") });
 	SetPropertyBlueprintVisible(FKConvexElem::StaticStruct(), {TEXT("VertexData"), TEXT("IndexData"), TEXT("ElemBox") });
 	SetPropertyBlueprintVisible(FKSphylElem::StaticStruct(), {TEXT("Center"), TEXT("Rotation"), TEXT("Radius") , TEXT("Length")});
-	SetPropertyBlueprintVisible(FKTaperedCapsuleElem::StaticStruct(), {TEXT("Center"), TEXT("Rotation"), TEXT("Radius0") , TEXT("Radius1") TEXT("Length")});
+	SetPropertyBlueprintVisible(FKTaperedCapsuleElem::StaticStruct(), {TEXT("Center"), TEXT("Rotation"), TEXT("Radius0") , TEXT("Radius1"), TEXT("Length")});
 
 }
 
@@ -59,7 +58,7 @@ void FMetaExtend::SetPropertyBlueprintVisible(UStruct* Struct, const TArray<FStr
 		{
 			if(!PropertyIns->HasAnyPropertyFlags(CPF_BlueprintVisible))
 			{
-				PropertyIns->SetPropertyFlags(CPF_BlueprintVisible|CPF_Edit);
+				PropertyIns->SetPropertyFlags(CPF_BlueprintVisible);
 			}
 		}
 	}
